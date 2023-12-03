@@ -1,13 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeApp from '@/pages/Home/HomeApp.vue'
+import Home from '@/pages/Home/Home.vue'
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
             path: '/',
-            name: HomeApp,
-            component: HomeApp
+            name: 'Home',
+            component: Home
+        },
+        {
+            path: '/auth',
+            name: 'Auth',
+            component: () => import('@/pages/Auth/Auth.vue')
         }
     ]
 })
